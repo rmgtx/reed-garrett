@@ -2,9 +2,9 @@
 
 Sits with the workflow, ships the system, and leaves operators with something they can run Monday — not a demo deck.
 
-**Live site:** [https://rmgtx.github.io/reed-garrett/](https://rmgtx.github.io/reed-garrett/)
+**Live site:** [https://about.rmgtx.dev](https://about.rmgtx.dev) — Cloudflare Pages (`about-rmgtx`), kept separate from [portfolio.rmgtx.dev](https://portfolio.rmgtx.dev) and Access-gated apex `rmgtx.dev`.
 
-> **Pages note:** Site source is configured. If the URL 404s, re-enable GitHub Actions for the `rmgtx` account ([Actions settings](https://github.com/settings/actions)), then open [repo Pages settings](https://github.com/rmgtx/reed-garrett/settings/pages), choose **GitHub Actions**, and re-run the **Deploy Pages** workflow (or push to `main`).
+> **Deploy:** see [DEPLOY.md](DEPLOY.md). Project exists; run `wrangler pages deploy` once, attach custom domain `about.rmgtx.dev`, and **bypass Zero Trust Access** for that hostname.
 
 ## Selected work
 
