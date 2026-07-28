@@ -4,6 +4,8 @@ Sits with the workflow, ships the system, and leaves operators with something th
 
 **Live site:** [https://rmgtx.github.io/reed-garrett/](https://rmgtx.github.io/reed-garrett/)
 
+> **Pages note:** Site source is configured. If the URL 404s, re-enable GitHub Actions for the `rmgtx` account ([Actions settings](https://github.com/settings/actions)), then open [repo Pages settings](https://github.com/rmgtx/reed-garrett/settings/pages), choose **GitHub Actions**, and re-run the **Deploy Pages** workflow (or push to `main`).
+
 ## Selected work
 
 1. **Sessioned Vision Intake → Human Confirm → ERP Write** — Aerospace MRO framing. UI-agnostic harness extracts structured work-order fields from multi-page intake documents, waits for technician confirm, then writes to a tenant ERP contract.
