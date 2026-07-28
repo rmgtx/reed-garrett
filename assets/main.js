@@ -3,7 +3,7 @@
   const html = document.documentElement;
   html.classList.add("is-ready");
 
-  /* Mobile nav */
+  /* Mobile nav with focus management */
   const toggle = document.getElementById("nav-toggle");
   const panel = document.getElementById("nav-panel");
   const backdrop = document.getElementById("nav-backdrop");
@@ -14,13 +14,21 @@
     toggle.setAttribute("aria-expanded", String(open));
     document.body.classList.toggle("nav-open", open);
     if (backdrop) backdrop.hidden = !open;
+    if (open) {
+      const first = panel.querySelector("a");
+      first?.focus();
+    } else {
+      toggle.focus();
+    }
   };
 
   toggle?.addEventListener("click", () => setNav(!panel.classList.contains("is-open")));
   backdrop?.addEventListener("click", () => setNav(false));
   panel?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setNav(false)));
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setNav(false);
+    if (e.key === "Escape" && panel?.classList.contains("is-open")) {
+      setNav(false);
+    }
   });
 
   /* Spine + scroll progress */
@@ -69,14 +77,21 @@
     cases.forEach((el) => el.classList.add("is-visible", "is-drawn"));
   }
 
-  /* Case focus */
+  /* Case expand via dedicated toggle */
   const workList = document.getElementById("work-list");
+  const syncCaseToggle = (caseEl, active) => {
+    const btn = caseEl.querySelector(".case-toggle");
+    if (!btn) return;
+    btn.setAttribute("aria-expanded", String(active));
+    btn.textContent = active ? "Collapse" : "Expand";
+  };
+
   const focusCase = (caseEl, expand) => {
     const on = expand ?? !caseEl.classList.contains("is-focused");
     cases.forEach((c) => {
       const active = on && c === caseEl;
       c.classList.toggle("is-focused", active);
-      c.setAttribute("aria-expanded", String(active));
+      syncCaseToggle(c, active);
     });
     workList?.classList.toggle("is-focusing", on);
     if (on && caseEl.id) history.replaceState(null, "", `#${caseEl.id}`);
@@ -84,15 +99,10 @@
   };
 
   cases.forEach((caseEl) => {
-    caseEl.addEventListener("click", (e) => {
-      if (e.target.closest("a, button, .diagram-scrub, .scrub-btn")) return;
+    const btn = caseEl.querySelector(".case-toggle");
+    btn?.addEventListener("click", (e) => {
+      e.stopPropagation();
       focusCase(caseEl);
-    });
-    caseEl.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        focusCase(caseEl);
-      }
     });
   });
 
@@ -104,10 +114,12 @@
     }
   }
 
-  /* Diagram scrub (hero + cases) */
+  /* Diagram scrub (hero + cases) — lights nodes and inbound edges */
+  const scrubLive = document.getElementById("scrub-live");
   document.querySelectorAll(".diagram-scrub").forEach((scrub) => {
     const root = scrub.closest(".case-diagram, .hero-plane");
     const nodes = root?.querySelectorAll(".d-node") || [];
+    const edges = root?.querySelectorAll(".d-edge, .d-loop") || [];
     const setStep = (step) => {
       scrub.querySelectorAll(".scrub-btn").forEach((btn) => {
         btn.classList.toggle("is-active", Number(btn.dataset.step) === step);
@@ -115,6 +127,14 @@
       nodes.forEach((node) => {
         node.classList.toggle("is-active", Number(node.dataset.step) === step);
       });
+      edges.forEach((edge) => {
+        const edgeStep = edge.dataset.step;
+        edge.classList.toggle("is-active", edgeStep !== undefined && Number(edgeStep) === step);
+      });
+      const activeBtn = scrub.querySelector(`.scrub-btn[data-step="${step}"]`);
+      if (scrubLive && scrub.dataset.diagram === "intake-hero" && activeBtn) {
+        scrubLive.textContent = `Step: ${activeBtn.textContent}`;
+      }
     };
     scrub.querySelectorAll(".scrub-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -143,21 +163,35 @@
     });
   });
 
-  /* Timeline filter */
+  /* Timeline filter with aria-pressed + altitude plate sync */
   const timeline = document.getElementById("timeline");
   const scaleItems = [...document.querySelectorAll(".scale-item")];
+  const altitudePlate = document.querySelector(".altitude-plate");
+  const altitudeLayers = [...document.querySelectorAll(".altitude-layer")];
+
+  const applyEra = (era) => {
+    scaleItems.forEach((item) => {
+      const eras = (item.dataset.era || "").split(/\s+/);
+      item.classList.toggle("is-lit", era === "all" || eras.includes(era));
+    });
+    if (altitudePlate) {
+      altitudePlate.classList.toggle("is-filtering", era !== "all");
+      altitudeLayers.forEach((layer) => {
+        const eras = (layer.dataset.era || "").split(/\s+/);
+        layer.classList.toggle("is-lit", era === "all" || eras.includes(era));
+      });
+    }
+  };
+
   timeline?.querySelectorAll(".timeline-year").forEach((btn) => {
     btn.addEventListener("click", () => {
       const era = btn.dataset.era;
       timeline.querySelectorAll(".timeline-year").forEach((b) => {
         const on = b === btn;
         b.classList.toggle("is-active", on);
-        b.setAttribute("aria-selected", String(on));
+        b.setAttribute("aria-pressed", String(on));
       });
-      scaleItems.forEach((item) => {
-        const eras = (item.dataset.era || "").split(/\s+/);
-        item.classList.toggle("is-lit", era === "all" || eras.includes(era));
-      });
+      applyEra(era);
     });
   });
 })();
