@@ -3,23 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reed Garrett — Forward Deployed Engineer</title>
-  <meta name="description" content="Forward Deployed Engineer who sits with the workflow, ships the system, and leaves operators with something they can run Monday." />
-  <meta name="theme-color" content="#eef2f5" />
+  <title>Reed Garrett — Applied AI Systems</title>
+  <meta name="description" content="Applied AI systems builder who ships harnesses, agents, and personalization systems under real constraints — operators and enterprises can run Monday." />
+  <meta name="theme-color" content="#E6EAEE" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="grid-faint" aria-hidden="true"></div>
+  <nav class="spine" aria-label="Dossier sections">
+    <div class="spine__rail" aria-hidden="true"></div>
+    <div class="spine__markers">
+      <a class="spine__marker" href="#top" data-spine="top">00</a>
+      <a class="spine__marker" href="#work" data-spine="work">01</a>
+      <a class="spine__marker" href="#scale" data-spine="scale">02</a>
+      <a class="spine__marker" href="#method" data-spine="method">03</a>
+      <a class="spine__marker" href="#kits" data-spine="kits">04</a>
+      <a class="spine__marker" href="#about" data-spine="about">05</a>
+    </div>
+  </nav>
 
   <div class="wrap">
     <nav class="site-nav" aria-label="Primary">
       <a class="brand" href="#top">Reed Garrett</a>
-      <div class="nav-links">
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel">
+        <span class="mono">Menu</span>
+      </button>
+      <div class="nav-links" id="nav-panel">
         <a href="#work">Work</a>
+        <a href="#scale">At scale</a>
         <a href="#method">Method</a>
         <a href="#kits">Kits</a>
         <a href="#about">About</a>
@@ -27,162 +40,343 @@
       </div>
     </nav>
 
-    <header class="hero" id="top">
-      <p class="hero-label mono"><span class="dot" aria-hidden="true"></span> Forward Deployed Engineer</p>
-      <h1 class="hero-brand">Reed Garrett</h1>
-      <p class="hero-headline">Sit with the workflow. Ship the system. Leave something they can run Monday.</p>
-      <p class="hero-support">Sessioned AI systems and client-ready product surfaces — harnesses, document agents, and domain tooling — not slideware.</p>
-      <div class="cta-row">
+    <header class="hero" id="top" data-section="top">
+      <p class="hero-label mono stamp reveal" data-reveal="0">Applied AI systems</p>
+      <h1 class="hero-brand reveal" data-reveal="1">Reed Garrett</h1>
+      <p class="hero-headline reveal" data-reveal="2">I ship applied AI that operators and enterprises can run — harnesses, agents, and personalization systems under real constraints, not slideware.</p>
+      <div class="cta-row reveal" data-reveal="3">
         <a class="btn" href="#work">View work</a>
         <a class="btn btn-ghost" href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub</a>
         <a class="btn btn-ghost" href="mailto:agateyte@gmail.com">Email</a>
       </div>
+
+      <div class="hero-plane reveal" data-reveal="4" aria-label="Sessioned intake apparatus">
+        <div class="diagram-scrub mono" data-diagram="intake-hero" role="group" aria-label="Step through intake loop">
+          <button type="button" class="scrub-btn is-active" data-step="0">Capture</button>
+          <button type="button" class="scrub-btn" data-step="1">Vision</button>
+          <button type="button" class="scrub-btn" data-step="2">Confirm</button>
+          <button type="button" class="scrub-btn" data-step="3">Write</button>
+        </div>
+        <svg class="diagram-svg" viewBox="0 0 720 220" role="img" aria-labelledby="intakeTitleHero intakeDescHero">
+          <title id="intakeTitleHero">Sessioned vision intake loop</title>
+          <desc id="intakeDescHero">Capture, vision extract, human confirm, ERP write as a closed session loop.</desc>
+          <defs>
+            <marker id="arrow-hero" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <g class="diagram-nodes" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
+            <g class="d-node" data-step="0">
+              <rect x="24" y="70" width="130" height="64" rx="0"/>
+              <text x="89" y="98" text-anchor="middle" class="d-label">CAPTURE</text>
+              <text x="89" y="116" text-anchor="middle" class="d-sub">docs + photos</text>
+            </g>
+            <line class="d-edge draw" x1="154" y1="102" x2="198" y2="102" marker-end="url(#arrow-hero)"/>
+            <g class="d-node" data-step="1">
+              <rect x="200" y="70" width="130" height="64" rx="0"/>
+              <text x="265" y="98" text-anchor="middle" class="d-label">VISION</text>
+              <text x="265" y="116" text-anchor="middle" class="d-sub">structured fields</text>
+            </g>
+            <line class="d-edge draw" x1="330" y1="102" x2="374" y2="102" marker-end="url(#arrow-hero)"/>
+            <g class="d-node is-gate" data-step="2">
+              <rect x="376" y="70" width="140" height="64" rx="0"/>
+              <text x="446" y="98" text-anchor="middle" class="d-label">CONFIRM</text>
+              <text x="446" y="116" text-anchor="middle" class="d-sub">human gate</text>
+            </g>
+            <line class="d-edge draw" x1="516" y1="102" x2="560" y2="102" marker-end="url(#arrow-hero)"/>
+            <g class="d-node" data-step="3">
+              <rect x="562" y="70" width="130" height="64" rx="0"/>
+              <text x="627" y="98" text-anchor="middle" class="d-label">ERP WRITE</text>
+              <text x="627" y="116" text-anchor="middle" class="d-sub">tenant contract</text>
+            </g>
+            <path class="d-loop draw" d="M 627 134 C 627 178 89 178 89 134" fill="none" marker-end="url(#arrow-hero)"/>
+            <text x="360" y="198" text-anchor="middle" class="d-caption">SESSION STATE MACHINE · NOT CHAT</text>
+          </g>
+        </svg>
+      </div>
     </header>
 
-    <section id="work" aria-labelledby="work-title">
+    <section id="work" data-section="work" aria-labelledby="work-title">
       <div class="section-head">
-        <p class="mono">Selected work</p>
+        <p class="mono stamp">Proof pillars</p>
         <h2 id="work-title">Three systems that had to survive the floor</h2>
         <p>Architecture and outcomes only. Client names anonymized. No screenshots of private systems.</p>
       </div>
 
-      <div class="work-list">
-        <article class="case">
+      <div class="work-list" id="work-list">
+        <article class="case" id="work-01" data-case="1" data-method="ship" tabindex="0" role="button" aria-expanded="false">
+          <div class="case-rule" aria-hidden="true"></div>
           <p class="case-index mono">01</p>
           <div class="case-body">
             <h3>Sessioned Vision Intake → Human Confirm → ERP Write</h3>
-            <span class="case-meta mono">Aerospace MRO · agent harness</span>
+            <span class="case-meta mono stamp">Aerospace MRO · agent harness</span>
             <p>
               Built a UI-agnostic agent harness that extracts structured work-order fields from multi-page industrial intake documents via vision, then writes to a tenant ERP contract — only after a technician confirms.
             </p>
-            <p>
+            <p class="case-more">
               Separated the harness brain from a mobile-first intake UI, with a session state machine, knowledge-base lookup, and stub/live adapters so the loop runs offline-first. The product is the extraction → confirm → write path, not chat.
             </p>
-            <figure class="case-diagram">
-              <img src="assets/diagrams/intake-loop.svg" alt="Diagram: capture to vision to human confirm to ERP write, looping on session state" width="720" height="220" loading="lazy" />
+            <figure class="case-diagram case-diagram--compact" aria-label="Compact intake reprise">
+              <svg class="diagram-svg" viewBox="0 0 720 100" role="img" aria-labelledby="intakeCompactTitle">
+                <title id="intakeCompactTitle">Intake loop compact</title>
+                <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="currentColor">
+                  <text x="40" y="55">CAPTURE</text>
+                  <text x="150" y="55">→</text>
+                  <text x="180" y="55">VISION</text>
+                  <text x="280" y="55">→</text>
+                  <text x="310" y="55" class="gate-text">CONFIRM</text>
+                  <text x="430" y="55">→</text>
+                  <text x="460" y="55">ERP WRITE</text>
+                  <text x="40" y="82" class="d-caption" style="fill: var(--fg-tertiary)">Same loop as cover plate · scrub above</text>
+                </g>
+              </svg>
             </figure>
           </div>
         </article>
 
-        <article class="case">
+        <article class="case" id="work-02" data-case="2" data-method="harden" tabindex="0" role="button" aria-expanded="false">
+          <div class="case-rule" aria-hidden="true"></div>
           <p class="case-index mono">02</p>
           <div class="case-body">
             <h3>Cited Alternate-Part Validation Over a Controlled Corpus</h3>
-            <span class="case-meta mono">Aviation maintenance · high-stakes domain AI</span>
+            <span class="case-meta mono stamp">Aviation maintenance · high-stakes domain AI</span>
             <p>
               Built alternate-part validation tooling over a large OEM technical-manual corpus with three-way cited verdicts — confirmed, contradicted, or undetermined — and auditable per-claim method trails.
             </p>
-            <p>
+            <p class="case-more">
               Authored a normative interchangeability knowledge base (OEM tokens, regulatory codes, legend precedence) and treated undetermined as a first-class outcome. Controlled manuals stayed offline; the system carries code and docs only. Semantics beat more LLM calls.
             </p>
-            <figure class="case-diagram">
-              <img src="assets/diagrams/claim-cite-verdict.svg" alt="Diagram: claim to cite against offline corpus to three-way verdict with method trail" width="720" height="240" loading="lazy" />
+            <figure class="case-diagram" aria-label="Claim cite verdict diagram">
+              <div class="diagram-scrub mono" data-diagram="verdict" role="group" aria-label="Step through verdict pipeline">
+                <button type="button" class="scrub-btn is-active" data-step="0">Claim</button>
+                <button type="button" class="scrub-btn" data-step="1">Cite</button>
+                <button type="button" class="scrub-btn" data-step="2">Verdict</button>
+              </div>
+              <svg class="diagram-svg" viewBox="0 0 720 240" role="img" aria-labelledby="verdictTitle verdictDesc">
+                <title id="verdictTitle">Claim cite verdict pipeline</title>
+                <desc id="verdictDesc">Claim extraction flows to citation against a controlled corpus, then to a three-way verdict with method trail.</desc>
+                <defs>
+                  <marker id="arrow-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+                  </marker>
+                </defs>
+                <g class="diagram-nodes" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
+                  <g class="d-node" data-step="0">
+                    <rect x="40" y="80" width="140" height="64" rx="0"/>
+                    <text x="110" y="108" text-anchor="middle" class="d-label">CLAIM</text>
+                    <text x="110" y="126" text-anchor="middle" class="d-sub">extract assertion</text>
+                  </g>
+                  <line class="d-edge draw" x1="180" y1="112" x2="240" y2="112" marker-end="url(#arrow-v)"/>
+                  <g class="d-node" data-step="1">
+                    <rect x="242" y="80" width="180" height="64" rx="0"/>
+                    <text x="332" y="108" text-anchor="middle" class="d-label">CITE CORPUS</text>
+                    <text x="332" y="126" text-anchor="middle" class="d-sub">offline manuals</text>
+                  </g>
+                  <line class="d-edge draw" x1="422" y1="112" x2="482" y2="112" marker-end="url(#arrow-v)"/>
+                  <g class="d-node is-gate" data-step="2">
+                    <rect x="484" y="56" width="196" height="112" rx="0"/>
+                    <text x="582" y="88" text-anchor="middle" class="d-label">VERDICT</text>
+                    <text x="582" y="110" text-anchor="middle" class="d-sub">confirmed</text>
+                    <text x="582" y="128" text-anchor="middle" class="d-sub">contradicted</text>
+                    <text x="582" y="146" text-anchor="middle" class="d-sub">undetermined</text>
+                  </g>
+                  <text x="360" y="210" text-anchor="middle" class="d-caption">METHOD TRAIL · SEMANTICS OVER CALLS</text>
+                </g>
+              </svg>
             </figure>
           </div>
         </article>
 
-        <article class="case">
+        <article class="case" id="work-03" data-case="3" data-method="discover" tabindex="0" role="button" aria-expanded="false">
+          <div class="case-rule" aria-hidden="true"></div>
           <p class="case-index mono">03</p>
           <div class="case-body">
             <h3>Print-Faithful Spec Viewer + Document-Aware Agent</h3>
-            <span class="case-meta mono">Commercial interiors · client delivery</span>
+            <span class="case-meta mono stamp">Commercial interiors · client delivery</span>
             <p>
               Built a print-faithful multi-page document viewer with deterministic PDF export and an embedded document-aware sales agent — for a commercial interiors / building-services manufacturer.
             </p>
-            <p>
+            <p class="case-more">
               Print fidelity was a product requirement, not a nice-to-have: page-hash cadence against source art, lead capture on the edge, and messaging constraints treated as requirements. Rebuilt mocks only — no client screenshots here.
             </p>
+            <figure class="case-diagram" aria-label="Print viewer and document agent diagram">
+              <div class="diagram-scrub mono" data-diagram="print" role="group" aria-label="Step through print and agent pipeline">
+                <button type="button" class="scrub-btn is-active" data-step="0">Source</button>
+                <button type="button" class="scrub-btn" data-step="1">Hash</button>
+                <button type="button" class="scrub-btn" data-step="2">Viewer</button>
+                <button type="button" class="scrub-btn" data-step="3">Agent</button>
+              </div>
+              <svg class="diagram-svg" viewBox="0 0 720 220" role="img" aria-labelledby="printTitle printDesc">
+                <title id="printTitle">Print-faithful viewer and document agent</title>
+                <desc id="printDesc">Source art to page hash to viewer to document-aware agent and PDF export.</desc>
+                <defs>
+                  <marker id="arrow-c03" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+                  </marker>
+                </defs>
+                <g class="diagram-nodes" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
+                  <g class="d-node" data-step="0">
+                    <rect x="24" y="70" width="130" height="64" rx="0"/>
+                    <text x="89" y="98" text-anchor="middle" class="d-label">SOURCE</text>
+                    <text x="89" y="116" text-anchor="middle" class="d-sub">print art</text>
+                  </g>
+                  <line class="d-edge draw" x1="154" y1="102" x2="198" y2="102" marker-end="url(#arrow-c03)"/>
+                  <g class="d-node" data-step="1">
+                    <rect x="200" y="70" width="130" height="64" rx="0"/>
+                    <text x="265" y="98" text-anchor="middle" class="d-label">PAGE HASH</text>
+                    <text x="265" y="116" text-anchor="middle" class="d-sub">fidelity check</text>
+                  </g>
+                  <line class="d-edge draw" x1="330" y1="102" x2="374" y2="102" marker-end="url(#arrow-c03)"/>
+                  <g class="d-node" data-step="2">
+                    <rect x="376" y="70" width="140" height="64" rx="0"/>
+                    <text x="446" y="98" text-anchor="middle" class="d-label">VIEWER</text>
+                    <text x="446" y="116" text-anchor="middle" class="d-sub">multi-page</text>
+                  </g>
+                  <line class="d-edge draw" x1="516" y1="102" x2="560" y2="102" marker-end="url(#arrow-c03)"/>
+                  <g class="d-node is-gate" data-step="3">
+                    <rect x="562" y="70" width="130" height="64" rx="0"/>
+                    <text x="627" y="98" text-anchor="middle" class="d-label">AGENT</text>
+                    <text x="627" y="116" text-anchor="middle" class="d-sub">+ PDF export</text>
+                  </g>
+                  <text x="360" y="198" text-anchor="middle" class="d-caption">PRINT FIDELITY AS REQUIREMENT</text>
+                </g>
+              </svg>
+            </figure>
           </div>
         </article>
       </div>
-
-      <div class="also">
-        <h3>Also shipped</h3>
-        <div class="also-strip">
-          <div class="also-item">
-            <span class="mono">SMB concierges</span>
-            <p>Guardrails-first booking and conversion agents for residential services and energy-resilience funnels — what the agent must never invent.</p>
-          </div>
-          <div class="also-item">
-            <span class="mono">Rent portal</span>
-            <p>Tenant rent portal with address lookup, checkout, and owner admin reminders — scoped from a landlord consult, not a full payments platform.</p>
-          </div>
-          <div class="also-item">
-            <span class="mono">Design craft</span>
-            <p>Production design-system packaging for industrial AI, plus open HTML-first Claude Code kits for durable decisions.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="method" aria-labelledby="method-title">
+    <section id="scale" data-section="scale" aria-labelledby="scale-title">
       <div class="section-head">
-        <p class="mono">How I work</p>
+        <p class="mono stamp">At scale</p>
+        <h2 id="scale-title">Enterprise applied AI &amp; platforms</h2>
+        <p>Large U.S. network operator · personalization &amp; GenAI org · 2019–2026. Themes and altitude only. Exact dollars withheld pending confirmation.</p>
+      </div>
+
+      <p class="scale-meta mono stamp">Altitude · nine-figure personalization portfolio · lean model ops · 7-year arc</p>
+
+      <div class="timeline" id="timeline" role="tablist" aria-label="Career timeline">
+        <button type="button" class="timeline-year is-active" role="tab" aria-selected="true" data-era="all">All</button>
+        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="rtm">2019</button>
+        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="enable">2022</button>
+        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="director">2024</button>
+        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="director">2026</button>
+      </div>
+
+      <ul class="scale-list">
+        <li class="scale-item is-lit" data-era="director">
+          <span class="mono stamp">Ops</span>
+          <p>Built production ML ops and governance for a large personalization portfolio — intake, monitoring, holdouts, Finance-validated valuation — with a lean operating team.</p>
+        </li>
+        <li class="scale-item is-lit" data-era="director enable">
+          <span class="mono stamp">GenAI</span>
+          <p>Directed GenAI productization for marketing ops: in-house copy generation and the org’s first automated legal/compliance scoring path for scaled campaign content.</p>
+        </li>
+        <li class="scale-item is-lit" data-era="director">
+          <span class="mono stamp">Scale</span>
+          <p>Scaled outreach and intent personalization programs with holdout-measured impact; partnered marketing, digital CX, and technology for mainline adoption.</p>
+        </li>
+        <li class="scale-item is-lit" data-era="director">
+          <span class="mono stamp">Retain</span>
+          <p>Deployed retention and dynamic-offer models across mobile and home connectivity segments; treated measurement design and guarded outcomes as first-class.</p>
+        </li>
+        <li class="scale-item is-lit" data-era="rtm enable">
+          <span class="mono stamp">Foundation</span>
+          <p>Earlier: built real-time marketing and CRO experimentation capability that later funded AI credibility — from pod execution to Sr. Mgr / Assoc. Director altitude.</p>
+        </li>
+        <li class="scale-item is-lit" data-era="director">
+          <span class="mono stamp">Prototype</span>
+          <p>Prototyped guided, conversational account-review experiences for executive buy-in — intent taxonomy, plan optimization, live bill-impact — concept demos with mocked data.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="also" class="also-section" aria-labelledby="also-title">
+      <div class="section-head">
+        <p class="mono stamp">Range</p>
+        <h2 id="also-title">Also shipped</h2>
+      </div>
+      <dl class="also-rows">
+        <div class="also-row">
+          <dt class="mono stamp">SMB concierges</dt>
+          <dd>Guardrails-first booking and conversion agents for residential services and energy-resilience funnels — what the agent must never invent.</dd>
+        </div>
+        <div class="also-row">
+          <dt class="mono stamp">Rent portal</dt>
+          <dd>Tenant rent portal with address lookup, checkout, and owner admin reminders — scoped from a landlord consult.</dd>
+        </div>
+        <div class="also-row">
+          <dt class="mono stamp">Design craft</dt>
+          <dd>Production design-system packaging for industrial AI, plus open HTML-first Claude Code kits for durable decisions.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="method" data-section="method" aria-labelledby="method-title">
+      <div class="section-head">
+        <p class="mono stamp">How I work</p>
         <h2 id="method-title">Discover → Ship → Harden</h2>
-        <p>Forward deployed means the workflow is the brief. Monday has to work without me in the room.</p>
+        <p>The workflow is the brief — hangar floor or marketing ops. Monday has to work without me in the room.</p>
       </div>
-      <div class="method-steps">
-        <div class="method-step">
-          <div class="num" aria-hidden="true">01</div>
-          <h3>Discover</h3>
-          <p>Sit with operators. Map the real document, handoff, and failure modes — not the deck version of the process.</p>
-        </div>
-        <div class="method-step">
-          <div class="num" aria-hidden="true">02</div>
-          <h3>Ship</h3>
-          <p>Thin UI over a sessioned system. Stub-first adapters, human gates where risk lives, cutover when the loop is honest.</p>
-        </div>
-        <div class="method-step">
-          <div class="num" aria-hidden="true">03</div>
-          <h3>Harden</h3>
-          <p>Knowledge bases as authority. Auditable trails. Guardrails as requirements. Leave them something they can run Monday.</p>
-        </div>
+      <div class="procedure-ledger" id="procedure-ledger">
+        <button type="button" class="procedure-row" data-link="discover" aria-pressed="false">
+          <span class="mono stamp">01 · LOOP</span>
+          <span class="procedure-title">Discover</span>
+          <span class="procedure-body">Sit with operators and orgs. Map the real document, handoff, and failure modes — not the deck version of the process.</span>
+        </button>
+        <button type="button" class="procedure-row" data-link="ship" aria-pressed="false">
+          <span class="mono stamp">02 · CONFIRM</span>
+          <span class="procedure-title">Ship</span>
+          <span class="procedure-body">Thin UI over a sessioned system. Stub-first adapters, human gates where risk lives, cutover when the loop is honest.</span>
+        </button>
+        <button type="button" class="procedure-row" data-link="harden" aria-pressed="false">
+          <span class="mono stamp">03 · SEMANTICS</span>
+          <span class="procedure-title">Harden</span>
+          <span class="procedure-body">Knowledge bases as authority. Auditable trails. Guardrails as requirements. Leave them something they can run Monday.</span>
+        </button>
       </div>
     </section>
 
-    <section id="kits" aria-labelledby="kits-title">
+    <section id="kits" data-section="kits" aria-labelledby="kits-title">
       <div class="section-head">
-        <p class="mono">Open kits</p>
+        <p class="mono stamp">Open kits</p>
         <h2 id="kits-title">Public craft you can clone</h2>
-        <p>HTML-first DX and design-to-LLM tooling — same rules for humans and codegen.</p>
+        <p>How I ship decisions — HTML-first DX and design-to-LLM tooling. Same rules for humans and codegen.</p>
       </div>
-      <div class="kits">
-        <a class="kit" href="https://github.com/rmgtx/claude-html-kit" rel="noopener noreferrer">
-          <div>
-            <h3>claude-html-kit</h3>
-            <p>Claude Code slash commands that turn plans and specs into self-contained HTML artifacts and interactive decision sheets.</p>
-          </div>
-          <span class="kit-link">GitHub →</span>
+      <div class="kit-table" role="list">
+        <a class="kit-row" role="listitem" href="https://github.com/rmgtx/claude-html-kit" rel="noopener noreferrer">
+          <span class="kit-name mono stamp">claude-html-kit</span>
+          <span class="kit-desc">Slash commands that turn plans and specs into self-contained HTML artifacts and interactive decision sheets.</span>
+          <span class="kit-go mono">Clone →</span>
         </a>
-        <a class="kit" href="https://github.com/rmgtx/PageEX" rel="noopener noreferrer">
-          <div>
-            <h3>Page Extractor</h3>
-            <p>Chrome extension that extracts design tokens, component patterns, and LLM-ready prompts from live pages.</p>
-          </div>
-          <span class="kit-link">GitHub →</span>
+        <a class="kit-row" role="listitem" href="https://github.com/rmgtx/PageEX" rel="noopener noreferrer">
+          <span class="kit-name mono stamp">Page Extractor</span>
+          <span class="kit-desc">Chrome extension that extracts design tokens, component patterns, and LLM-ready prompts from live pages.</span>
+          <span class="kit-go mono">Clone →</span>
         </a>
       </div>
     </section>
 
-    <section id="about" aria-labelledby="about-title">
+    <section id="about" data-section="about" aria-labelledby="about-title">
       <div class="section-head">
-        <p class="mono">About</p>
-        <h2 id="about-title">Built for the floor, not the pitch</h2>
+        <p class="mono stamp">About</p>
+        <h2 id="about-title">Floor depth. Portfolio altitude.</h2>
       </div>
       <div class="about-grid">
-        <div>
+        <div class="about-copy">
           <p>
-            I’m Reed Garrett — a Forward Deployed Engineer who ships sessioned AI systems and client-ready product surfaces. Harnesses, document agents, domain tooling. The goal is operators who can trust Monday without a demo babysitter.
+            I’m Reed Garrett — I ship applied AI under production constraints. Sessioned harnesses and document agents on the floor; personalization, GenAI ops, and model governance at enterprise scale. I unify cross-team delivery and leave systems people can run without a demo babysitter.
           </p>
           <p>
-            Work shown here is rewritten for public use: industry framing, architecture diagrams, qualitative outcomes. Private catalogs and client repos stay private.
+            Work shown here is rewritten for public use: industry framing, architecture diagrams, qualitative outcomes. Private catalogs, employer brands, and client repos stay private.
           </p>
         </div>
         <div id="contact" class="contact-block">
-          <p class="mono" style="color: var(--teal); margin-bottom: 0.75rem;">Contact</p>
-          <a href="mailto:agateyte@gmail.com">agateyte@gmail.com</a>
-          <a href="https://github.com/rmgtx" rel="noopener noreferrer">github.com/rmgtx</a>
-          <a href="https://github.com/rmgtx/reed-garrett">This site on GitHub</a>
+          <p class="mono stamp contact-label">Contact</p>
+          <a class="btn contact-primary" href="mailto:agateyte@gmail.com">Email.</a>
+          <a href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub.</a>
+          <a href="https://github.com/rmgtx/reed-garrett">This site on GitHub.</a>
         </div>
       </div>
       <p class="note">Public boundary: anonymized clients by default · no unverified metrics · no private repo links. See <a href="https://github.com/rmgtx/reed-garrett/blob/main/PUBLIC_BOUNDARY.md">PUBLIC_BOUNDARY.md</a>.</p>
@@ -193,6 +387,8 @@
       <a href="https://github.com/rmgtx/reed-garrett">Source</a>
     </footer>
   </div>
+
+  <div class="nav-backdrop" id="nav-backdrop" hidden></div>
 
   <script>
     document.getElementById("y").textContent = String(new Date().getFullYear());

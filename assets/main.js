@@ -1,45 +1,163 @@
 (() => {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const html = document.documentElement;
+  html.classList.add("is-ready");
 
+  /* Mobile nav */
+  const toggle = document.getElementById("nav-toggle");
+  const panel = document.getElementById("nav-panel");
+  const backdrop = document.getElementById("nav-backdrop");
+
+  const setNav = (open) => {
+    if (!panel || !toggle) return;
+    panel.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("nav-open", open);
+    if (backdrop) backdrop.hidden = !open;
+  };
+
+  toggle?.addEventListener("click", () => setNav(!panel.classList.contains("is-open")));
+  backdrop?.addEventListener("click", () => setNav(false));
+  panel?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setNav(false)));
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setNav(false);
+  });
+
+  /* Spine + scroll progress */
+  const nav = document.querySelector(".site-nav");
+  const spine = document.querySelector(".spine");
+  const markers = [...document.querySelectorAll(".spine__marker")];
+  const sections = [...document.querySelectorAll("[data-section]")];
+
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    if (spine) spine.style.setProperty("--spine-progress", String(p));
+    nav?.classList.toggle("is-scrolled", window.scrollY > 8);
+
+    let active = sections[0]?.dataset.section || "top";
+    const y = window.scrollY + window.innerHeight * 0.28;
+    for (const sec of sections) {
+      if (sec.offsetTop <= y) active = sec.dataset.section;
+    }
+    markers.forEach((m) => {
+      m.classList.toggle("is-active", m.dataset.spine === active);
+    });
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  /* Case enter */
+  const cases = [...document.querySelectorAll(".case")];
   if (reduce) {
-    document.querySelectorAll(".case").forEach((el) => el.classList.add("is-visible"));
-    document.querySelector(".method-steps")?.classList.add("is-drawn");
-    return;
-  }
-
-  const cases = document.querySelectorAll(".case");
-  if (cases.length && "IntersectionObserver" in window) {
+    cases.forEach((el) => el.classList.add("is-visible", "is-drawn"));
+  } else if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible", "is-drawn");
+          io.unobserve(entry.target);
         });
       },
-      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
     );
     cases.forEach((el) => io.observe(el));
   } else {
-    cases.forEach((el) => el.classList.add("is-visible"));
+    cases.forEach((el) => el.classList.add("is-visible", "is-drawn"));
   }
 
-  const method = document.querySelector(".method-steps");
-  if (method && "IntersectionObserver" in window) {
-    const mio = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-drawn");
-            mio.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.35 }
-    );
-    mio.observe(method);
-  } else if (method) {
-    method.classList.add("is-drawn");
+  /* Case focus */
+  const workList = document.getElementById("work-list");
+  const focusCase = (caseEl, expand) => {
+    const on = expand ?? !caseEl.classList.contains("is-focused");
+    cases.forEach((c) => {
+      const active = on && c === caseEl;
+      c.classList.toggle("is-focused", active);
+      c.setAttribute("aria-expanded", String(active));
+    });
+    workList?.classList.toggle("is-focusing", on);
+    if (on && caseEl.id) history.replaceState(null, "", `#${caseEl.id}`);
+    else if (!on && location.hash.startsWith("#work-")) history.replaceState(null, "", " ");
+  };
+
+  cases.forEach((caseEl) => {
+    caseEl.addEventListener("click", (e) => {
+      if (e.target.closest("a, button, .diagram-scrub, .scrub-btn")) return;
+      focusCase(caseEl);
+    });
+    caseEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        focusCase(caseEl);
+      }
+    });
+  });
+
+  if (location.hash.startsWith("#work-")) {
+    const target = document.querySelector(location.hash);
+    if (target?.classList.contains("case")) {
+      target.classList.add("is-visible", "is-drawn");
+      focusCase(target, true);
+    }
   }
+
+  /* Diagram scrub (hero + cases) */
+  document.querySelectorAll(".diagram-scrub").forEach((scrub) => {
+    const root = scrub.closest(".case-diagram, .hero-plane");
+    const nodes = root?.querySelectorAll(".d-node") || [];
+    const setStep = (step) => {
+      scrub.querySelectorAll(".scrub-btn").forEach((btn) => {
+        btn.classList.toggle("is-active", Number(btn.dataset.step) === step);
+      });
+      nodes.forEach((node) => {
+        node.classList.toggle("is-active", Number(node.dataset.step) === step);
+      });
+    };
+    scrub.querySelectorAll(".scrub-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setStep(Number(btn.dataset.step));
+      });
+    });
+    setStep(0);
+  });
+
+  /* Procedure ledger ↔ cases */
+  document.querySelectorAll(".procedure-row").forEach((step) => {
+    step.addEventListener("click", () => {
+      const link = step.dataset.link;
+      const pressed = step.getAttribute("aria-pressed") === "true";
+      document.querySelectorAll(".procedure-row").forEach((s) => s.setAttribute("aria-pressed", "false"));
+      cases.forEach((c) => c.classList.remove("is-linked"));
+      if (pressed) return;
+      step.setAttribute("aria-pressed", "true");
+      const match = cases.find((c) => c.dataset.method === link);
+      if (match) {
+        match.classList.add("is-linked", "is-visible", "is-drawn");
+        focusCase(match, true);
+        match.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      }
+    });
+  });
+
+  /* Timeline filter */
+  const timeline = document.getElementById("timeline");
+  const scaleItems = [...document.querySelectorAll(".scale-item")];
+  timeline?.querySelectorAll(".timeline-year").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const era = btn.dataset.era;
+      timeline.querySelectorAll(".timeline-year").forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-selected", String(on));
+      });
+      scaleItems.forEach((item) => {
+        const eras = (item.dataset.era || "").split(/\s+/);
+        item.classList.toggle("is-lit", era === "all" || eras.includes(era));
+      });
+    });
+  });
 })();
