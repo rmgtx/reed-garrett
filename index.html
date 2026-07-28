@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reed Garrett — Forward Deployed Engineer</title>
+  <meta name="description" content="Forward Deployed Engineer who sits with the workflow, ships the system, and leaves operators with something they can run Monday." />
+  <meta name="theme-color" content="#eef2f5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="grid-faint" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="#top">Reed Garrett</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#method">Method</a>
+        <a href="#kits">Kits</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <p class="hero-label mono"><span class="dot" aria-hidden="true"></span> Forward Deployed Engineer</p>
+      <h1 class="hero-brand">Reed Garrett</h1>
+      <p class="hero-headline">Sit with the workflow. Ship the system. Leave something they can run Monday.</p>
+      <p class="hero-support">Sessioned AI systems and client-ready product surfaces — harnesses, document agents, and domain tooling — not slideware.</p>
+      <div class="cta-row">
+        <a class="btn" href="#work">View work</a>
+        <a class="btn btn-ghost" href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-ghost" href="mailto:agateyte@gmail.com">Email</a>
+      </div>
+    </header>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <p class="mono">Selected work</p>
+        <h2 id="work-title">Three systems that had to survive the floor</h2>
+        <p>Architecture and outcomes only. Client names anonymized. No screenshots of private systems.</p>
+      </div>
+
+      <div class="work-list">
+        <article class="case">
+          <p class="case-index mono">01</p>
+          <div class="case-body">
+            <h3>Sessioned Vision Intake → Human Confirm → ERP Write</h3>
+            <span class="case-meta mono">Aerospace MRO · agent harness</span>
+            <p>
+              Built a UI-agnostic agent harness that extracts structured work-order fields from multi-page industrial intake documents via vision, then writes to a tenant ERP contract — only after a technician confirms.
+            </p>
+            <p>
+              Separated the harness brain from a mobile-first intake UI, with a session state machine, knowledge-base lookup, and stub/live adapters so the loop runs offline-first. The product is the extraction → confirm → write path, not chat.
+            </p>
+            <figure class="case-diagram">
+              <img src="assets/diagrams/intake-loop.svg" alt="Diagram: capture to vision to human confirm to ERP write, looping on session state" width="720" height="220" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-index mono">02</p>
+          <div class="case-body">
+            <h3>Cited Alternate-Part Validation Over a Controlled Corpus</h3>
+            <span class="case-meta mono">Aviation maintenance · high-stakes domain AI</span>
+            <p>
+              Built alternate-part validation tooling over a large OEM technical-manual corpus with three-way cited verdicts — confirmed, contradicted, or undetermined — and auditable per-claim method trails.
+            </p>
+            <p>
+              Authored a normative interchangeability knowledge base (OEM tokens, regulatory codes, legend precedence) and treated undetermined as a first-class outcome. Controlled manuals stayed offline; the system carries code and docs only. Semantics beat more LLM calls.
+            </p>
+            <figure class="case-diagram">
+              <img src="assets/diagrams/claim-cite-verdict.svg" alt="Diagram: claim to cite against offline corpus to three-way verdict with method trail" width="720" height="240" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+
+        <article class="case">
+          <p class="case-index mono">03</p>
+          <div class="case-body">
+            <h3>Print-Faithful Spec Viewer + Document-Aware Agent</h3>
+            <span class="case-meta mono">Commercial interiors · client delivery</span>
+            <p>
+              Built a print-faithful multi-page document viewer with deterministic PDF export and an embedded document-aware sales agent — for a commercial interiors / building-services manufacturer.
+            </p>
+            <p>
+              Print fidelity was a product requirement, not a nice-to-have: page-hash cadence against source art, lead capture on the edge, and messaging constraints treated as requirements. Rebuilt mocks only — no client screenshots here.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="also">
+        <h3>Also shipped</h3>
+        <div class="also-strip">
+          <div class="also-item">
+            <span class="mono">SMB concierges</span>
+            <p>Guardrails-first booking and conversion agents for residential services and energy-resilience funnels — what the agent must never invent.</p>
+          </div>
+          <div class="also-item">
+            <span class="mono">Rent portal</span>
+            <p>Tenant rent portal with address lookup, checkout, and owner admin reminders — scoped from a landlord consult, not a full payments platform.</p>
+          </div>
+          <div class="also-item">
+            <span class="mono">Design craft</span>
+            <p>Production design-system packaging for industrial AI, plus open HTML-first Claude Code kits for durable decisions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" aria-labelledby="method-title">
+      <div class="section-head">
+        <p class="mono">How I work</p>
+        <h2 id="method-title">Discover → Ship → Harden</h2>
+        <p>Forward deployed means the workflow is the brief. Monday has to work without me in the room.</p>
+      </div>
+      <div class="method-steps">
+        <div class="method-step">
+          <div class="num" aria-hidden="true">01</div>
+          <h3>Discover</h3>
+          <p>Sit with operators. Map the real document, handoff, and failure modes — not the deck version of the process.</p>
+        </div>
+        <div class="method-step">
+          <div class="num" aria-hidden="true">02</div>
+          <h3>Ship</h3>
+          <p>Thin UI over a sessioned system. Stub-first adapters, human gates where risk lives, cutover when the loop is honest.</p>
+        </div>
+        <div class="method-step">
+          <div class="num" aria-hidden="true">03</div>
+          <h3>Harden</h3>
+          <p>Knowledge bases as authority. Auditable trails. Guardrails as requirements. Leave them something they can run Monday.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kits" aria-labelledby="kits-title">
+      <div class="section-head">
+        <p class="mono">Open kits</p>
+        <h2 id="kits-title">Public craft you can clone</h2>
+        <p>HTML-first DX and design-to-LLM tooling — same rules for humans and codegen.</p>
+      </div>
+      <div class="kits">
+        <a class="kit" href="https://github.com/rmgtx/claude-html-kit" rel="noopener noreferrer">
+          <div>
+            <h3>claude-html-kit</h3>
+            <p>Claude Code slash commands that turn plans and specs into self-contained HTML artifacts and interactive decision sheets.</p>
+          </div>
+          <span class="kit-link">GitHub →</span>
+        </a>
+        <a class="kit" href="https://github.com/rmgtx/PageEX" rel="noopener noreferrer">
+          <div>
+            <h3>Page Extractor</h3>
+            <p>Chrome extension that extracts design tokens, component patterns, and LLM-ready prompts from live pages.</p>
+          </div>
+          <span class="kit-link">GitHub →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <p class="mono">About</p>
+        <h2 id="about-title">Built for the floor, not the pitch</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>
+            I’m Reed Garrett — a Forward Deployed Engineer who ships sessioned AI systems and client-ready product surfaces. Harnesses, document agents, domain tooling. The goal is operators who can trust Monday without a demo babysitter.
+          </p>
+          <p>
+            Work shown here is rewritten for public use: industry framing, architecture diagrams, qualitative outcomes. Private catalogs and client repos stay private.
+          </p>
+        </div>
+        <div id="contact" class="contact-block">
+          <p class="mono" style="color: var(--teal); margin-bottom: 0.75rem;">Contact</p>
+          <a href="mailto:agateyte@gmail.com">agateyte@gmail.com</a>
+          <a href="https://github.com/rmgtx" rel="noopener noreferrer">github.com/rmgtx</a>
+          <a href="https://github.com/rmgtx/reed-garrett">This site on GitHub</a>
+        </div>
+      </div>
+      <p class="note">Public boundary: anonymized clients by default · no unverified metrics · no private repo links. See <a href="https://github.com/rmgtx/reed-garrett/blob/main/PUBLIC_BOUNDARY.md">PUBLIC_BOUNDARY.md</a>.</p>
+    </section>
+
+    <footer>
+      <span>© <span id="y"></span> Reed Garrett</span>
+      <a href="https://github.com/rmgtx/reed-garrett">Source</a>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = String(new Date().getFullYear());
+  </script>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
