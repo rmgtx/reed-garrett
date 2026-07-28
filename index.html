@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reed Garrett — Applied AI Systems</title>
-  <meta name="description" content="Applied AI systems builder who ships harnesses, agents, and personalization systems under real constraints — operators and enterprises can run Monday." />
+  <title>Reed Garrett — Forward Deployed Engineer &amp; Applied AI Leadership</title>
+  <meta name="description" content="Forward Deployed Engineer and Applied AI leader — sessioned harnesses, document agents, and domain tooling on the floor; personalization and GenAI ops at enterprise scale." />
   <meta name="theme-color" content="#E6EAEE" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,12 +15,12 @@
   <nav class="spine" aria-label="Dossier sections">
     <div class="spine__rail" aria-hidden="true"></div>
     <div class="spine__markers">
-      <a class="spine__marker" href="#top" data-spine="top">00</a>
-      <a class="spine__marker" href="#work" data-spine="work">01</a>
-      <a class="spine__marker" href="#scale" data-spine="scale">02</a>
-      <a class="spine__marker" href="#method" data-spine="method">03</a>
-      <a class="spine__marker" href="#kits" data-spine="kits">04</a>
-      <a class="spine__marker" href="#about" data-spine="about">05</a>
+      <a class="spine__marker" href="#top" data-spine="top" aria-label="Cover">00</a>
+      <a class="spine__marker" href="#work" data-spine="work" aria-label="Work">01</a>
+      <a class="spine__marker" href="#method" data-spine="method" aria-label="Method">02</a>
+      <a class="spine__marker" href="#scale" data-spine="scale" aria-label="At scale">03</a>
+      <a class="spine__marker" href="#kits" data-spine="kits" aria-label="Kits">04</a>
+      <a class="spine__marker" href="#about" data-spine="about" aria-label="About">05</a>
     </div>
   </nav>
 
@@ -32,8 +32,8 @@
       </button>
       <div class="nav-links" id="nav-panel">
         <a href="#work">Work</a>
-        <a href="#scale">At scale</a>
         <a href="#method">Method</a>
+        <a href="#scale">At scale</a>
         <a href="#kits">Kits</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -41,13 +41,13 @@
     </nav>
 
     <header class="hero" id="top" data-section="top">
-      <p class="hero-label mono stamp reveal" data-reveal="0">Applied AI systems</p>
+      <p class="hero-label mono stamp reveal" data-reveal="0">Forward Deployed Engineer · Applied AI Leadership</p>
       <h1 class="hero-brand reveal" data-reveal="1">Reed Garrett</h1>
-      <p class="hero-headline reveal" data-reveal="2">I ship applied AI that operators and enterprises can run — harnesses, agents, and personalization systems under real constraints, not slideware.</p>
+      <p class="hero-headline reveal" data-reveal="2">I ship sessioned AI systems operators can run — and I’ve directed personalization, GenAI productization, and model ops at enterprise altitude.</p>
       <div class="cta-row reveal" data-reveal="3">
         <a class="btn" href="#work">View work</a>
-        <a class="btn btn-ghost" href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub</a>
         <a class="btn btn-ghost" href="mailto:agateyte@gmail.com">Email</a>
+        <a class="btn btn-ghost" href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub</a>
       </div>
 
       <div class="hero-plane reveal" data-reveal="4" aria-label="Sessioned intake apparatus">
@@ -57,11 +57,12 @@
           <button type="button" class="scrub-btn" data-step="2">Confirm</button>
           <button type="button" class="scrub-btn" data-step="3">Write</button>
         </div>
+        <p class="scrub-live mono stamp" id="scrub-live" aria-live="polite"></p>
         <svg class="diagram-svg" viewBox="0 0 720 220" role="img" aria-labelledby="intakeTitleHero intakeDescHero">
           <title id="intakeTitleHero">Sessioned vision intake loop</title>
           <desc id="intakeDescHero">Capture, vision extract, human confirm, ERP write as a closed session loop.</desc>
           <defs>
-            <marker id="arrow-hero" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
             </marker>
           </defs>
@@ -71,25 +72,25 @@
               <text x="89" y="98" text-anchor="middle" class="d-label">CAPTURE</text>
               <text x="89" y="116" text-anchor="middle" class="d-sub">docs + photos</text>
             </g>
-            <line class="d-edge draw" x1="154" y1="102" x2="198" y2="102" marker-end="url(#arrow-hero)"/>
+            <line class="d-edge draw" data-step="1" x1="154" y1="102" x2="198" y2="102" marker-end="url(#arrow)"/>
             <g class="d-node" data-step="1">
               <rect x="200" y="70" width="130" height="64" rx="0"/>
               <text x="265" y="98" text-anchor="middle" class="d-label">VISION</text>
               <text x="265" y="116" text-anchor="middle" class="d-sub">structured fields</text>
             </g>
-            <line class="d-edge draw" x1="330" y1="102" x2="374" y2="102" marker-end="url(#arrow-hero)"/>
+            <line class="d-edge draw" data-step="2" x1="330" y1="102" x2="374" y2="102" marker-end="url(#arrow)"/>
             <g class="d-node is-gate" data-step="2">
               <rect x="376" y="70" width="140" height="64" rx="0"/>
               <text x="446" y="98" text-anchor="middle" class="d-label">CONFIRM</text>
               <text x="446" y="116" text-anchor="middle" class="d-sub">human gate</text>
             </g>
-            <line class="d-edge draw" x1="516" y1="102" x2="560" y2="102" marker-end="url(#arrow-hero)"/>
+            <line class="d-edge draw" data-step="3" x1="516" y1="102" x2="560" y2="102" marker-end="url(#arrow)"/>
             <g class="d-node" data-step="3">
               <rect x="562" y="70" width="130" height="64" rx="0"/>
               <text x="627" y="98" text-anchor="middle" class="d-label">ERP WRITE</text>
               <text x="627" y="116" text-anchor="middle" class="d-sub">tenant contract</text>
             </g>
-            <path class="d-loop draw" d="M 627 134 C 627 178 89 178 89 134" fill="none" marker-end="url(#arrow-hero)"/>
+            <path class="d-loop draw" data-step="0" d="M 627 134 C 627 178 89 178 89 134" fill="none" marker-end="url(#arrow)"/>
             <text x="360" y="198" text-anchor="middle" class="d-caption">SESSION STATE MACHINE · NOT CHAT</text>
           </g>
         </svg>
@@ -100,51 +101,78 @@
       <div class="section-head">
         <p class="mono stamp">Proof pillars</p>
         <h2 id="work-title">Three systems that had to survive the floor</h2>
-        <p>Architecture and outcomes only. Client names anonymized. No screenshots of private systems.</p>
+        <p>Harness, high-stakes domain tooling, and a client delivery surface. Architecture and outcomes only — anonymized, no private screenshots.</p>
       </div>
 
       <div class="work-list" id="work-list">
-        <article class="case" id="work-01" data-case="1" data-method="ship" tabindex="0" role="button" aria-expanded="false">
+        <article class="case" id="work-01" data-case="1" data-method="ship">
           <div class="case-rule" aria-hidden="true"></div>
           <p class="case-index mono">01</p>
           <div class="case-body">
-            <h3>Sessioned Vision Intake → Human Confirm → ERP Write</h3>
+            <div class="case-head-row">
+              <h3>Sessioned Vision Intake → Human Confirm → ERP Write</h3>
+              <button type="button" class="case-toggle mono" aria-expanded="false" aria-controls="work-01-more">Expand</button>
+            </div>
             <span class="case-meta mono stamp">Aerospace MRO · agent harness</span>
             <p>
               Built a UI-agnostic agent harness that extracts structured work-order fields from multi-page industrial intake documents via vision, then writes to a tenant ERP contract — only after a technician confirms.
             </p>
-            <p class="case-more">
-              Separated the harness brain from a mobile-first intake UI, with a session state machine, knowledge-base lookup, and stub/live adapters so the loop runs offline-first. The product is the extraction → confirm → write path, not chat.
+            <p class="case-more" id="work-01-more">
+              Separated the harness brain from a mobile-first intake UI, with a session state machine, knowledge-base lookup, and stub/live adapters so the loop runs offline-first. Then prototyped a workbench to design, evaluate, and export reusable agent packages — shared runner and templates — so the product is the loop and the package, not a one-off chat.
             </p>
             <figure class="case-diagram case-diagram--compact" aria-label="Compact intake reprise">
-              <svg class="diagram-svg" viewBox="0 0 720 100" role="img" aria-labelledby="intakeCompactTitle">
+              <svg class="diagram-svg" viewBox="0 0 720 120" role="img" aria-labelledby="intakeCompactTitle">
                 <title id="intakeCompactTitle">Intake loop compact</title>
-                <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="currentColor">
-                  <text x="40" y="55">CAPTURE</text>
-                  <text x="150" y="55">→</text>
-                  <text x="180" y="55">VISION</text>
-                  <text x="280" y="55">→</text>
-                  <text x="310" y="55" class="gate-text">CONFIRM</text>
-                  <text x="430" y="55">→</text>
-                  <text x="460" y="55">ERP WRITE</text>
-                  <text x="40" y="82" class="d-caption" style="fill: var(--fg-tertiary)">Same loop as cover plate · scrub above</text>
+                <defs>
+                  <marker id="arrow-c01" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+                  </marker>
+                </defs>
+                <g class="diagram-nodes" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
+                  <g class="d-node" data-step="0">
+                    <rect x="28" y="28" width="110" height="48" rx="0"/>
+                    <text x="83" y="50" text-anchor="middle" class="d-label">CAPTURE</text>
+                    <text x="83" y="64" text-anchor="middle" class="d-sub">docs</text>
+                  </g>
+                  <line class="d-edge" x1="138" y1="52" x2="168" y2="52" marker-end="url(#arrow-c01)"/>
+                  <g class="d-node" data-step="1">
+                    <rect x="170" y="28" width="110" height="48" rx="0"/>
+                    <text x="225" y="50" text-anchor="middle" class="d-label">VISION</text>
+                    <text x="225" y="64" text-anchor="middle" class="d-sub">fields</text>
+                  </g>
+                  <line class="d-edge" x1="280" y1="52" x2="310" y2="52" marker-end="url(#arrow-c01)"/>
+                  <g class="d-node is-gate" data-step="2">
+                    <rect x="312" y="28" width="120" height="48" rx="0"/>
+                    <text x="372" y="50" text-anchor="middle" class="d-label">CONFIRM</text>
+                    <text x="372" y="64" text-anchor="middle" class="d-sub">human gate</text>
+                  </g>
+                  <line class="d-edge" x1="432" y1="52" x2="462" y2="52" marker-end="url(#arrow-c01)"/>
+                  <g class="d-node" data-step="3">
+                    <rect x="464" y="28" width="110" height="48" rx="0"/>
+                    <text x="519" y="50" text-anchor="middle" class="d-label">WRITE</text>
+                    <text x="519" y="64" text-anchor="middle" class="d-sub">ERP</text>
+                  </g>
+                  <text x="360" y="104" text-anchor="middle" class="d-caption">INTAKE LOOP · HUMAN BEFORE WRITE</text>
                 </g>
               </svg>
             </figure>
           </div>
         </article>
 
-        <article class="case" id="work-02" data-case="2" data-method="harden" tabindex="0" role="button" aria-expanded="false">
+        <article class="case" id="work-02" data-case="2" data-method="harden">
           <div class="case-rule" aria-hidden="true"></div>
           <p class="case-index mono">02</p>
           <div class="case-body">
-            <h3>Cited Alternate-Part Validation Over a Controlled Corpus</h3>
+            <div class="case-head-row">
+              <h3>Cited Alternate-Part Validation Over a Controlled Corpus</h3>
+              <button type="button" class="case-toggle mono" aria-expanded="false" aria-controls="work-02-more">Expand</button>
+            </div>
             <span class="case-meta mono stamp">Aviation maintenance · high-stakes domain AI</span>
             <p>
               Built alternate-part validation tooling over a large OEM technical-manual corpus with three-way cited verdicts — confirmed, contradicted, or undetermined — and auditable per-claim method trails.
             </p>
-            <p class="case-more">
-              Authored a normative interchangeability knowledge base (OEM tokens, regulatory codes, legend precedence) and treated undetermined as a first-class outcome. Controlled manuals stayed offline; the system carries code and docs only. Semantics beat more LLM calls.
+            <p class="case-more" id="work-02-more">
+              Authored a normative interchangeability knowledge base (OEM tokens, regulatory codes, legend precedence) and used it as authority to correct a systemic misclassification in the part graph. Undetermined stayed a first-class verdict; semantics beat more LLM calls. Controlled manuals stayed offline; the system carries code and docs only.
             </p>
             <figure class="case-diagram" aria-label="Claim cite verdict diagram">
               <div class="diagram-scrub mono" data-diagram="verdict" role="group" aria-label="Step through verdict pipeline">
@@ -152,9 +180,9 @@
                 <button type="button" class="scrub-btn" data-step="1">Cite</button>
                 <button type="button" class="scrub-btn" data-step="2">Verdict</button>
               </div>
-              <svg class="diagram-svg" viewBox="0 0 720 240" role="img" aria-labelledby="verdictTitle verdictDesc">
+              <svg class="diagram-svg diagram-svg--verdict" viewBox="0 0 720 260" role="img" aria-labelledby="verdictTitle verdictDesc">
                 <title id="verdictTitle">Claim cite verdict pipeline</title>
-                <desc id="verdictDesc">Claim extraction flows to citation against a controlled corpus, then to a three-way verdict with method trail.</desc>
+                <desc id="verdictDesc">Claim extraction flows to citation against a controlled corpus, then fans out to three peer verdicts with method trail.</desc>
                 <defs>
                   <marker id="arrow-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
@@ -162,41 +190,51 @@
                 </defs>
                 <g class="diagram-nodes" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
                   <g class="d-node" data-step="0">
-                    <rect x="40" y="80" width="140" height="64" rx="0"/>
-                    <text x="110" y="108" text-anchor="middle" class="d-label">CLAIM</text>
-                    <text x="110" y="126" text-anchor="middle" class="d-sub">extract assertion</text>
+                    <rect x="24" y="98" width="130" height="64" rx="0"/>
+                    <text x="89" y="126" text-anchor="middle" class="d-label">CLAIM</text>
+                    <text x="89" y="144" text-anchor="middle" class="d-sub">extract assertion</text>
                   </g>
-                  <line class="d-edge draw" x1="180" y1="112" x2="240" y2="112" marker-end="url(#arrow-v)"/>
+                  <line class="d-edge draw" data-step="1" x1="154" y1="130" x2="198" y2="130" marker-end="url(#arrow-v)"/>
                   <g class="d-node" data-step="1">
-                    <rect x="242" y="80" width="180" height="64" rx="0"/>
-                    <text x="332" y="108" text-anchor="middle" class="d-label">CITE CORPUS</text>
-                    <text x="332" y="126" text-anchor="middle" class="d-sub">offline manuals</text>
+                    <rect x="200" y="98" width="150" height="64" rx="0"/>
+                    <text x="275" y="126" text-anchor="middle" class="d-label">CITE CORPUS</text>
+                    <text x="275" y="144" text-anchor="middle" class="d-sub">offline manuals</text>
                   </g>
-                  <line class="d-edge draw" x1="422" y1="112" x2="482" y2="112" marker-end="url(#arrow-v)"/>
-                  <g class="d-node is-gate" data-step="2">
-                    <rect x="484" y="56" width="196" height="112" rx="0"/>
-                    <text x="582" y="88" text-anchor="middle" class="d-label">VERDICT</text>
-                    <text x="582" y="110" text-anchor="middle" class="d-sub">confirmed</text>
-                    <text x="582" y="128" text-anchor="middle" class="d-sub">contradicted</text>
-                    <text x="582" y="146" text-anchor="middle" class="d-sub">undetermined</text>
+                  <line class="d-edge draw" data-step="2" x1="350" y1="118" x2="410" y2="56" marker-end="url(#arrow-v)"/>
+                  <line class="d-edge draw" data-step="2" x1="350" y1="130" x2="410" y2="130" marker-end="url(#arrow-v)"/>
+                  <line class="d-edge draw" data-step="2" x1="350" y1="142" x2="410" y2="204" marker-end="url(#arrow-v)"/>
+                  <g class="d-node is-fork" data-step="2">
+                    <rect x="412" y="24" width="170" height="48" rx="0"/>
+                    <text x="497" y="52" text-anchor="middle" class="d-label">CONFIRMED</text>
                   </g>
-                  <text x="360" y="210" text-anchor="middle" class="d-caption">METHOD TRAIL · SEMANTICS OVER CALLS</text>
+                  <g class="d-node is-fork" data-step="2">
+                    <rect x="412" y="106" width="170" height="48" rx="0"/>
+                    <text x="497" y="134" text-anchor="middle" class="d-label">CONTRADICTED</text>
+                  </g>
+                  <g class="d-node is-fork" data-step="2">
+                    <rect x="412" y="188" width="170" height="48" rx="0"/>
+                    <text x="497" y="216" text-anchor="middle" class="d-label">UNDETERMINED</text>
+                  </g>
+                  <text x="360" y="252" text-anchor="middle" class="d-caption">METHOD TRAIL · SEMANTICS OVER CALLS</text>
                 </g>
               </svg>
             </figure>
           </div>
         </article>
 
-        <article class="case" id="work-03" data-case="3" data-method="discover" tabindex="0" role="button" aria-expanded="false">
+        <article class="case" id="work-03" data-case="3" data-method="discover">
           <div class="case-rule" aria-hidden="true"></div>
           <p class="case-index mono">03</p>
           <div class="case-body">
-            <h3>Print-Faithful Spec Viewer + Document-Aware Agent</h3>
+            <div class="case-head-row">
+              <h3>Print-Faithful Spec Viewer + Document-Aware Agent</h3>
+              <button type="button" class="case-toggle mono" aria-expanded="false" aria-controls="work-03-more">Expand</button>
+            </div>
             <span class="case-meta mono stamp">Commercial interiors · client delivery</span>
             <p>
               Built a print-faithful multi-page document viewer with deterministic PDF export and an embedded document-aware sales agent — for a commercial interiors / building-services manufacturer.
             </p>
-            <p class="case-more">
+            <p class="case-more" id="work-03-more">
               Print fidelity was a product requirement, not a nice-to-have: page-hash cadence against source art, lead capture on the edge, and messaging constraints treated as requirements. Rebuilt mocks only — no client screenshots here.
             </p>
             <figure class="case-diagram" aria-label="Print viewer and document agent diagram">
@@ -206,9 +244,9 @@
                 <button type="button" class="scrub-btn" data-step="2">Viewer</button>
                 <button type="button" class="scrub-btn" data-step="3">Agent</button>
               </div>
-              <svg class="diagram-svg" viewBox="0 0 720 220" role="img" aria-labelledby="printTitle printDesc">
+              <svg class="diagram-svg diagram-svg--print" viewBox="0 0 720 240" role="img" aria-labelledby="printTitle printDesc">
                 <title id="printTitle">Print-faithful viewer and document agent</title>
-                <desc id="printDesc">Source art to page hash to viewer to document-aware agent and PDF export.</desc>
+                <desc id="printDesc">Source art to page hash to viewer, then branch to document-aware agent and PDF export.</desc>
                 <defs>
                   <marker id="arrow-c03" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
@@ -216,29 +254,35 @@
                 </defs>
                 <g class="diagram-nodes" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
                   <g class="d-node" data-step="0">
-                    <rect x="24" y="70" width="130" height="64" rx="0"/>
-                    <text x="89" y="98" text-anchor="middle" class="d-label">SOURCE</text>
-                    <text x="89" y="116" text-anchor="middle" class="d-sub">print art</text>
+                    <rect x="24" y="88" width="120" height="64" rx="0"/>
+                    <text x="84" y="116" text-anchor="middle" class="d-label">SOURCE</text>
+                    <text x="84" y="134" text-anchor="middle" class="d-sub">print art</text>
                   </g>
-                  <line class="d-edge draw" x1="154" y1="102" x2="198" y2="102" marker-end="url(#arrow-c03)"/>
-                  <g class="d-node" data-step="1">
-                    <rect x="200" y="70" width="130" height="64" rx="0"/>
-                    <text x="265" y="98" text-anchor="middle" class="d-label">PAGE HASH</text>
-                    <text x="265" y="116" text-anchor="middle" class="d-sub">fidelity check</text>
+                  <line class="d-edge draw" data-step="1" x1="144" y1="120" x2="184" y2="120" marker-end="url(#arrow-c03)"/>
+                  <g class="d-node is-gate" data-step="1">
+                    <rect x="186" y="88" width="130" height="64" rx="0"/>
+                    <text x="251" y="116" text-anchor="middle" class="d-label">PAGE HASH</text>
+                    <text x="251" y="134" text-anchor="middle" class="d-sub">fidelity check</text>
                   </g>
-                  <line class="d-edge draw" x1="330" y1="102" x2="374" y2="102" marker-end="url(#arrow-c03)"/>
+                  <line class="d-edge draw" data-step="2" x1="316" y1="120" x2="356" y2="120" marker-end="url(#arrow-c03)"/>
                   <g class="d-node" data-step="2">
-                    <rect x="376" y="70" width="140" height="64" rx="0"/>
-                    <text x="446" y="98" text-anchor="middle" class="d-label">VIEWER</text>
-                    <text x="446" y="116" text-anchor="middle" class="d-sub">multi-page</text>
+                    <rect x="358" y="88" width="120" height="64" rx="0"/>
+                    <text x="418" y="116" text-anchor="middle" class="d-label">VIEWER</text>
+                    <text x="418" y="134" text-anchor="middle" class="d-sub">multi-page</text>
                   </g>
-                  <line class="d-edge draw" x1="516" y1="102" x2="560" y2="102" marker-end="url(#arrow-c03)"/>
-                  <g class="d-node is-gate" data-step="3">
-                    <rect x="562" y="70" width="130" height="64" rx="0"/>
-                    <text x="627" y="98" text-anchor="middle" class="d-label">AGENT</text>
-                    <text x="627" y="116" text-anchor="middle" class="d-sub">+ PDF export</text>
+                  <line class="d-edge draw" data-step="3" x1="478" y1="108" x2="530" y2="56" marker-end="url(#arrow-c03)"/>
+                  <line class="d-edge draw" data-step="3" x1="478" y1="132" x2="530" y2="184" marker-end="url(#arrow-c03)"/>
+                  <g class="d-node" data-step="3">
+                    <rect x="532" y="24" width="140" height="56" rx="0"/>
+                    <text x="602" y="50" text-anchor="middle" class="d-label">AGENT</text>
+                    <text x="602" y="66" text-anchor="middle" class="d-sub">doc-aware</text>
                   </g>
-                  <text x="360" y="198" text-anchor="middle" class="d-caption">PRINT FIDELITY AS REQUIREMENT</text>
+                  <g class="d-node" data-step="3">
+                    <rect x="532" y="160" width="140" height="56" rx="0"/>
+                    <text x="602" y="186" text-anchor="middle" class="d-label">PDF EXPORT</text>
+                    <text x="602" y="202" text-anchor="middle" class="d-sub">deterministic</text>
+                  </g>
+                  <text x="360" y="232" text-anchor="middle" class="d-caption">PRINT FIDELITY AS REQUIREMENT</text>
                 </g>
               </svg>
             </figure>
@@ -247,21 +291,71 @@
       </div>
     </section>
 
+    <section id="method" data-section="method" aria-labelledby="method-title">
+      <div class="section-head">
+        <p class="mono stamp">How I work</p>
+        <h2 id="method-title">Discover → Ship → Harden</h2>
+        <p>Same loop on the hangar floor and in marketing ops: map the real process, ship a sessioned system with human gates, harden until Monday works without me in the room.</p>
+        <p class="section-hint mono stamp">Select a step to open the matching proof pillar.</p>
+      </div>
+      <div class="procedure-ledger" id="procedure-ledger">
+        <button type="button" class="procedure-row" data-link="discover" aria-pressed="false">
+          <span class="mono stamp">01 · DISCOVER</span>
+          <span class="procedure-title">Discover</span>
+          <span class="procedure-body">Sit with operators and orgs. Map the real document, handoff, and failure modes — not the deck version of the process.</span>
+        </button>
+        <button type="button" class="procedure-row" data-link="ship" aria-pressed="false">
+          <span class="mono stamp">02 · SHIP</span>
+          <span class="procedure-title">Ship</span>
+          <span class="procedure-body">Thin UI over a sessioned system. Stub-first adapters, human gates where risk lives, cutover when the loop is honest.</span>
+        </button>
+        <button type="button" class="procedure-row" data-link="harden" aria-pressed="false">
+          <span class="mono stamp">03 · HARDEN</span>
+          <span class="procedure-title">Harden</span>
+          <span class="procedure-body">Knowledge bases as authority. Auditable trails. Guardrails as requirements. Leave them something they can run Monday.</span>
+        </button>
+      </div>
+    </section>
+
     <section id="scale" data-section="scale" aria-labelledby="scale-title">
       <div class="section-head">
         <p class="mono stamp">At scale</p>
-        <h2 id="scale-title">Enterprise applied AI &amp; platforms</h2>
-        <p>Large U.S. network operator · personalization &amp; GenAI org · 2019–2026. Themes and altitude only. Exact dollars withheld pending confirmation.</p>
+        <h2 id="scale-title">Applied AI leadership at enterprise altitude</h2>
+        <p>Large U.S. network operator · personalization &amp; GenAI · 2019–2026 · Sr. Mgr → Assoc. Director arc. Themes and altitude only.</p>
       </div>
 
-      <p class="scale-meta mono stamp">Altitude · nine-figure personalization portfolio · lean model ops · 7-year arc</p>
+      <p class="scale-meta mono stamp">Director altitude · large personalization portfolio · lean model ops · 7-year arc</p>
 
-      <div class="timeline" id="timeline" role="tablist" aria-label="Career timeline">
-        <button type="button" class="timeline-year is-active" role="tab" aria-selected="true" data-era="all">All</button>
-        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="rtm">2019</button>
-        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="enable">2022</button>
-        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="director">2024</button>
-        <button type="button" class="timeline-year" role="tab" aria-selected="false" data-era="director">2026</button>
+      <figure class="altitude-plate" aria-label="Career altitude layers">
+        <svg class="diagram-svg" viewBox="0 0 720 160" role="img" aria-labelledby="altitudeTitle altitudeDesc">
+          <title id="altitudeTitle">Enterprise altitude layers</title>
+          <desc id="altitudeDesc">Foundation, Enable, and Director altitude layers with theme stamps — qualitative only, no metrics.</desc>
+          <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">
+            <g class="altitude-layer" data-era="director">
+              <rect x="24" y="16" width="672" height="40" rx="0" class="altitude-rect"/>
+              <text x="40" y="40" class="d-label">DIRECTOR · 2024–26</text>
+              <text x="280" y="40" class="d-sub">Ops · GenAI · Scale · Retain · Prototype</text>
+            </g>
+            <g class="altitude-layer" data-era="enable">
+              <rect x="24" y="60" width="672" height="40" rx="0" class="altitude-rect"/>
+              <text x="40" y="84" class="d-label">ENABLE · 2022</text>
+              <text x="280" y="84" class="d-sub">GenAI productization · legal path</text>
+            </g>
+            <g class="altitude-layer" data-era="rtm">
+              <rect x="24" y="104" width="672" height="40" rx="0" class="altitude-rect"/>
+              <text x="40" y="128" class="d-label">FOUNDATION · 2019</text>
+              <text x="280" y="128" class="d-sub">RTM · CRO · experimentation</text>
+            </g>
+          </g>
+          <text x="360" y="156" text-anchor="middle" class="d-caption">ALTITUDE · THEMES ONLY · NO METRICS</text>
+        </svg>
+      </figure>
+
+      <div class="timeline" id="timeline" role="group" aria-label="Career era filter">
+        <button type="button" class="timeline-year is-active" aria-pressed="true" data-era="all">All</button>
+        <button type="button" class="timeline-year" aria-pressed="false" data-era="rtm">2019</button>
+        <button type="button" class="timeline-year" aria-pressed="false" data-era="enable">2022</button>
+        <button type="button" class="timeline-year" aria-pressed="false" data-era="director">2024–26</button>
       </div>
 
       <ul class="scale-list">
@@ -296,53 +390,37 @@
       <div class="section-head">
         <p class="mono stamp">Range</p>
         <h2 id="also-title">Also shipped</h2>
+        <p>Short list — SMB agents, portals, live ops, design craft. Not the proof pillars.</p>
       </div>
       <dl class="also-rows">
         <div class="also-row">
           <dt class="mono stamp">SMB concierges</dt>
-          <dd>Guardrails-first booking and conversion agents for residential services and energy-resilience funnels — what the agent must never invent.</dd>
+          <dd>Guardrails-first booking and conversion agents for residential services and energy-resilience funnels — messaging constraints as requirements; what the agent must never invent.</dd>
         </div>
         <div class="also-row">
           <dt class="mono stamp">Rent portal</dt>
-          <dd>Tenant rent portal with address lookup, checkout, and owner admin reminders — scoped from a landlord consult.</dd>
+          <dd>Tenant portal with no-login address lookup, checkout, and owner admin reminders on the edge — scoped from a landlord consult, not a full payments platform.</dd>
+        </div>
+        <div class="also-row">
+          <dt class="mono stamp">InfoSec portal</dt>
+          <dd>Employee command center for a mid-market security team: incident reporting, request forms, policy library, and training calendar on Next.js.</dd>
+        </div>
+        <div class="also-row">
+          <dt class="mono stamp">Venue ops</dt>
+          <dd>Statewide event venue finder with automated ticketing provisioning and immutable ops IDs across sheet → API → database.</dd>
         </div>
         <div class="also-row">
           <dt class="mono stamp">Design craft</dt>
-          <dd>Production design-system packaging for industrial AI, plus open HTML-first Claude Code kits for durable decisions.</dd>
+          <dd>Production design system for industrial AI (tokens, type, multi-surface kits), packaged as an agent-invocable skill — same rules for humans and codegen. Open HTML-first kits sit beside it.</dd>
         </div>
       </dl>
-    </section>
-
-    <section id="method" data-section="method" aria-labelledby="method-title">
-      <div class="section-head">
-        <p class="mono stamp">How I work</p>
-        <h2 id="method-title">Discover → Ship → Harden</h2>
-        <p>The workflow is the brief — hangar floor or marketing ops. Monday has to work without me in the room.</p>
-      </div>
-      <div class="procedure-ledger" id="procedure-ledger">
-        <button type="button" class="procedure-row" data-link="discover" aria-pressed="false">
-          <span class="mono stamp">01 · LOOP</span>
-          <span class="procedure-title">Discover</span>
-          <span class="procedure-body">Sit with operators and orgs. Map the real document, handoff, and failure modes — not the deck version of the process.</span>
-        </button>
-        <button type="button" class="procedure-row" data-link="ship" aria-pressed="false">
-          <span class="mono stamp">02 · CONFIRM</span>
-          <span class="procedure-title">Ship</span>
-          <span class="procedure-body">Thin UI over a sessioned system. Stub-first adapters, human gates where risk lives, cutover when the loop is honest.</span>
-        </button>
-        <button type="button" class="procedure-row" data-link="harden" aria-pressed="false">
-          <span class="mono stamp">03 · SEMANTICS</span>
-          <span class="procedure-title">Harden</span>
-          <span class="procedure-body">Knowledge bases as authority. Auditable trails. Guardrails as requirements. Leave them something they can run Monday.</span>
-        </button>
-      </div>
     </section>
 
     <section id="kits" data-section="kits" aria-labelledby="kits-title">
       <div class="section-head">
         <p class="mono stamp">Open kits</p>
         <h2 id="kits-title">Public craft you can clone</h2>
-        <p>How I ship decisions — HTML-first DX and design-to-LLM tooling. Same rules for humans and codegen.</p>
+        <p>HTML-first DX and design-to-LLM tooling — same rules for humans and codegen.</p>
       </div>
       <div class="kit-table" role="list">
         <a class="kit-row" role="listitem" href="https://github.com/rmgtx/claude-html-kit" rel="noopener noreferrer">
@@ -366,17 +444,17 @@
       <div class="about-grid">
         <div class="about-copy">
           <p>
-            I’m Reed Garrett — I ship applied AI under production constraints. Sessioned harnesses and document agents on the floor; personalization, GenAI ops, and model governance at enterprise scale. I unify cross-team delivery and leave systems people can run without a demo babysitter.
+            I’m Reed Garrett — Forward Deployed Engineer and Applied AI leader. Sessioned harnesses and document agents where operators work; directed personalization, GenAI productization, and model governance at enterprise scale. I unify cross-team delivery and leave systems people can run without a demo babysitter.
           </p>
           <p>
-            Work shown here is rewritten for public use: industry framing, architecture diagrams, qualitative outcomes. Private catalogs, employer brands, and client repos stay private.
+            Work here is rewritten for public use: industry framing, architecture diagrams, qualitative outcomes. Client names, employer brands, and private repos stay private.
           </p>
         </div>
         <div id="contact" class="contact-block">
           <p class="mono stamp contact-label">Contact</p>
-          <a class="btn contact-primary" href="mailto:agateyte@gmail.com">Email.</a>
-          <a href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub.</a>
-          <a href="https://github.com/rmgtx/reed-garrett">This site on GitHub.</a>
+          <a class="btn contact-primary" href="mailto:agateyte@gmail.com">Email me</a>
+          <a href="https://github.com/rmgtx" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/rmgtx/reed-garrett">Site source</a>
         </div>
       </div>
       <p class="note">Public boundary: anonymized clients by default · no unverified metrics · no private repo links. See <a href="https://github.com/rmgtx/reed-garrett/blob/main/PUBLIC_BOUNDARY.md">PUBLIC_BOUNDARY.md</a>.</p>
